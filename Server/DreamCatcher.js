@@ -11,14 +11,14 @@ app.use(bodyParser.urlencoded({ extended: true}));
 
 app.post ('/', function(req, res){
 	console.log(req.body);
-	MongoClient.connect(url, function(err, db){
-		db.collection('col').insertOne(req.body, function (err, result){
-			assert.equal(err, null);
-			console.log('Inserted a document');
-			db.close();
-		});
+	//MongoClient.connect(url, function(err, db){
+	//	db.collection('col').insertOne(req.body, function (err, result){
+	//		assert.equal(err, null);
+	//		console.log('Inserted a document');
+	//		db.close();
+	//	});
 		//db.close();
-	});
+	//});
 	res.send('ok');
 });
 
