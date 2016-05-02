@@ -48,7 +48,7 @@ function setFormAttrs (form, iterator){
 function ExecuteAngularApp(){
     var app = angular.module('myApp', []);
     
-    app.controller('ctrl', function($scope){
+    app.controller('ctrl', function($scope, $http){
         $scope.Form = {};
         $scope.click = function (){
             var data = {};
@@ -64,6 +64,11 @@ function ExecuteAngularApp(){
             console.log(data);
             $scope.Text = 'submit Form No. ' + $scope.formNumber;
             
+            $http({
+                url: 'http://localhost:8000/',
+                method: 'post',
+                data: data
+            });
         };
     });
 }
