@@ -30,7 +30,7 @@ function setFormAttrs (form, iterator){
     var ngAttr;
     
     for (var k=0; k < inputs.length; k++){
-        if (inputs[k].type == 'text'){
+        if (inputs[k].type == 'text' || inputs[k].type == 'password'){
             ngAttr = document.createAttribute('ng-model');
             ngAttr.value = 'Form.' + 'Text' + iterator + '_' + textCount;
             inputs[k].setAttributeNode(ngAttr);
@@ -61,7 +61,7 @@ function ExecuteAngularApp(){
                 data[inputId] = formInput;
                 //console.log(formInput);
             }
-            //console.log($scope.Form);
+            console.log(data);
             $scope.Text = 'submit Form No. ' + $scope.formNumber;
             
         };
